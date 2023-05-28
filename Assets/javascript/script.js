@@ -20,14 +20,6 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
- // 
-  
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
 
 // function that checks the time variable "currentHour" and compares that to the id of each hour
   function checkTime(){
@@ -54,17 +46,27 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
 
-  function saveUserInput(){
+  function saveUserInput(event){
     //takes each hour elements' id then adds that value after "input-" so that it can grab each input
+    event.preventDefault();
     hourArray.forEach((hourEl) => {
       idVal = hourEl.id;
       console.log(idVal);
-      var inputEl = '#input-' + idVal;
+      //adds the id "input-" to every id value
+      inputEl = '#input-' + idVal;
       console.log(inputEl);
-      var inputHour = $(inputEl).val();
-      console.log(idVal, inputHour);
-      localStorage.setItem(idVal, inputHour);
+      //stores the input from the user to a variable
+      input= $(inputEl).val();
+      //stores the id as the key and the input as the value to local storage
+      localStorage.setItem(idVal, input);
     });
+  }
+  function getUserInput(hour){
+    var hourNumber = localStorage.getItem(hour);
+    idVal = hourEl.id;
+    inputEl = '#input-' + idVal;
+    console.log(inputEl);
+    $(inputEl).append(hourNumber);
   }
 
 
@@ -79,5 +81,5 @@ $(function () {
   showTime();
   
 
-  saveBtnEl.addEventListener("click", saveUserInput);
+  saveBtnEl.on("click", saveUserInput);
 });
