@@ -17,12 +17,12 @@ I learned how to grab the date by using dayjs, and then use that date to make if
 ## Installation
 
 Load the webpage in any browser.
-Here's a link to the webpage: https://brownkasey.github.io/Module-5-Challenge/
+Here's a link to the webpage: https://brownkasey.github.io/Workday-Scheduler/
 
 ## Usage
 The web application will store any information you choose at any hour you choose to save it at and any information saved can be overwritten with other information.
 
-Head to the webpage: https://brownkasey.github.io/Module-5-Challenge/
+Head to the webpage: https://brownkasey.github.io/Workday-Scheduler/
 
 On the webpage, it will show you different boxes for hours 9am to 5pm. Each box will have a color; grey, red or green. Grey boxes represent hours that have already passed, the red box represents the current hour of the day, and the green boxes represent the hours that haven't passed. If all the hour boxes are grey then it is outside of work hours.
 
