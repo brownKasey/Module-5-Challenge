@@ -33,11 +33,15 @@ $(function () {
       //compares id number to the time(formatted in 24 hrs)
       if (idVal == currentHour){
        hourEl.setAttribute("class", "row time-block present");
+      getUserInput(idVal);
       } else if (idVal < currentHour){
         hourEl.setAttribute("class", "row time-block past");
+      getUserInput(idVal);
       }else
       hourEl.setAttribute("class", "row time-block future");
+      getUserInput(idVal);
     });
+    
   }
   //calls the function
   checkTime();
@@ -62,13 +66,14 @@ $(function () {
     });
   }
   function getUserInput(hour){
-    var hourNumber = localStorage.getItem(hour);
-    idVal = hourEl.id;
-    inputEl = '#input-' + idVal;
-    console.log(inputEl);
-    $(inputEl).append(hourNumber);
+    // gets the user input from local storage
+    var userValue = localStorage.getItem(hour);
+    // adds the id "input-" to every id value
+    var inputEl = "#input-" + hour;
+    // appends the user value to the corresponding input element
+    $(inputEl).append(userValue);
+  
   }
-
 
 
   //displays the current date in the header of the page.
