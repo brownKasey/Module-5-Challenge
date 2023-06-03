@@ -32,7 +32,7 @@ You can click on any of the colored areas and will be able to take any notes wit
 Something important to note is you have to click the save button on every hour you wanted to save the notes for!
 The screenshot below shows how the webpage would look at if your time is 12 pm, to show an example of all the colored arears.
 
-![Webpage](assets/images/Webpage.png)
+![Webpage](./Assets/images/Webpage.png)
 
 ## Credits
 
